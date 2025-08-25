@@ -1,0 +1,23 @@
+{
+    "opciones_inventory": {
+        "core_effects": [
+            {
+                "theme": "background_gradiant",
+                "gradiant_type": "Lineal_vertical",
+                "start_color": [
+                    115,
+                    255,
+                    120
+                ],
+                "end_color": [
+                    45,
+                    75,
+                    125
+                ],
+                "rounded_corners": 12
+            }
+        ],
+        "image_layer": [],
+        "widget_type": "mvChildWindow"
+    }
+}
