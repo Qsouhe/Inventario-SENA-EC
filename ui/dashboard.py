@@ -69,19 +69,20 @@ def dashboard_window():
                     dpg.add_text("cantidad: nose", tag="txt_ctd_dado_baja")
     
                 with dpg.child_window(tag="lista_equipos", border=False):
-                    with dpg.table( resizable=False, 
-                                    borders_innerV=False, 
-                                    borders_outerV=False, 
-                                    borders_outerH=False,
-                                    row_background=True,
-                                    pad_outerX=True,
-                                    header_row=False,
-                                    policy=dpg.mvTable_SizingFixedFit,
-                                    tag="table_cantidad_elements",
-                                    ):
-                        dpg.add_table_column()
-                        dpg.add_table_column(label="Imagen", width_fixed=False)
-                        dpg.add_table_column(label="Contenedor", width_stretch=True)
+                    with dpg.child_window(tag="container_lista_equipos", border=False):
+                        with dpg.table( resizable=False, 
+                                        borders_innerV=False, 
+                                        borders_outerV=False, 
+                                        borders_outerH=False,
+                                        row_background=True,
+                                        pad_outerX=True,
+                                        header_row=False,
+                                        policy=dpg.mvTable_SizingFixedFit,
+                                        tag="table_cantidad_elements",
+                                        ):
+                            dpg.add_table_column()
+                            dpg.add_table_column(label="Imagen", width_fixed=False)
+                            dpg.add_table_column(label="Contenedor", width_stretch=True)
 
     dpg.bind_item_font("txt_MasR", loader.fuente_subtitulo_1)
     dpg.bind_item_font("txt_GraficasC", loader.fuente_subtitulo_1)
@@ -96,6 +97,7 @@ def dashboard_window():
     dpg.bind_item_theme("opciones", themes.themes["childwindow_no_background"])
     dpg.bind_item_theme("dashboard", themes.themes["childwindow_no_background"])
     dpg.bind_item_theme("lista_equipos", themes.themes["childwindow_no_background"])
+    dpg.bind_item_theme("container_lista_equipos", themes.themes["childwindow_no_background"])
     dpg.bind_item_theme("equipos_recientes", themes.themes["fondo_contenedores"])
     dpg.bind_item_theme("grafica", themes.themes["fondo_contenedores"])
     dpg.bind_item_theme("txt_estado_bueno", themes.themes["estado_verde"])
